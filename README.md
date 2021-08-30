@@ -3,6 +3,8 @@ Minor modification for compile with CWC under Windows.
 
 This generate an Win32 .exe executable file for **game on Windows** and **Cpcdos OS2.1**
 
+_Use adapted doom.cpc for execute win32 game into cpcdos_
+
 ![CPCDOS](screenshots/cpcdos.png)
 
 # Original readme
