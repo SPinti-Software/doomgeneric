@@ -1,7 +1,7 @@
 # Fork for Cpcdos
-Minor modification for compile with CWC under Windows. 
+Minor modification for compile with [CWC](https://github.com/VLiance/Cwc) under Windows. 
 
-This generate an Win32 .exe executable file for **game on Windows** and **Cpcdos OS2.1**
+This generate an Win32 .exe executable file for **game on Windows** and **[Cpcdos](https://cpcdos.net/) OS2.1**
 
 _Use adapted **doom.cpc** file for execute win32 game into cpcdos_
 
