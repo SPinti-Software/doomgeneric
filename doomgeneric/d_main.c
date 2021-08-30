@@ -416,6 +416,8 @@ void D_DoomLoop (void)
                " may cause demos and network games to get out of sync.\n");
     }
 
+
+	
     if (demorecording)
     	G_BeginRecording ();
 
@@ -423,16 +425,31 @@ void D_DoomLoop (void)
 
     TryRunTics();
 
-    I_SetWindowTitle(gamedescription);
+	
+    // I_SetWindowTitle(gamedescription);
+
     I_GraphicsCheckCommandLine();
+	
+	
     I_SetGrabMouseCallback(D_GrabMouseCallback);
+	
+
+	
     I_InitGraphics();
+	
+
+	
     I_EnableLoadingDisk();
 
+
     V_RestoreBuffer();
+	
+
     R_ExecuteSetViewSize();
 
+
     D_StartGameLoop();
+
 
     if (testcontrols)
     {
@@ -446,7 +463,7 @@ void D_DoomLoop (void)
 
 		TryRunTics (); // will run at least one tic
 
-		S_UpdateSounds (players[consoleplayer].mo);// move positional sounds
+		// S_UpdateSounds (players[consoleplayer].mo);// move positional sounds
 
 		// Update display, next frame, with current state.
 		if (screenvisible)
@@ -1609,7 +1626,7 @@ void D_DoomMain (void)
     I_CheckIsScreensaver();
     I_InitTimer();
     I_InitJoystick();
-    I_InitSound(true);
+    // I_InitSound(false);
     I_InitMusic();
 
 #ifdef FEATURE_MULTIPLAYER
@@ -1761,8 +1778,10 @@ void D_DoomMain (void)
     DEH_printf("R_Init: Init DOOM refresh daemon - ");
     R_Init ();
 
-    DEH_printf("\nP_Init: Init Playloop state.\n");
+    DEH_printf("\nP_Init: Init Playloop state .\n");
     P_Init ();
+	
+	
 
     DEH_printf("S_Init: Setting up sound.\n");
     S_Init (sfxVolume * 8, musicVolume * 8);
@@ -1777,6 +1796,8 @@ void D_DoomMain (void)
 
     DEH_printf("ST_Init: Init status bar.\n");
     ST_Init ();
+	
+	
 
     // If Doom II without a MAP01 lump, this is a store demo.
     // Moved this here so that MAP01 isn't constantly looked up
@@ -1835,7 +1856,7 @@ void D_DoomMain (void)
 		else
 			D_StartTitle ();                // start up intro loop
     }
-
+	
     D_DoomLoop ();  // never returns
 }
 

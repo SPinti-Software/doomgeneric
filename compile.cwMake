@@ -1,0 +1,18 @@
+>
+-{pObj}=obj/
+>
+-{sToolChainName}=LibRT
+>
+-{vLink_LibRT}= -lgdi32 -lOle32
+-Wl,--export-all-symbols
+>
+-{sToolChainType}:=wasm
+>
+-{_wToolchain}:= VLianceTool/{sToolChainName}[{sToolChainType}]
+>
+-{vLink}= -{vLink_{sToolChainName}}
+>
+-c doomgeneric/ -o obj/ -O1
+>
+-o obj/ -#To doom.exe -{vLink} 
+>

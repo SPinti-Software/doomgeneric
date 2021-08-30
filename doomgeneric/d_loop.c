@@ -87,7 +87,7 @@ static int      skiptics = 0;
 // Reduce the bandwidth needed by sampling game input less and transmitting
 // less.  If ticdup is 2, sample half normal, 3 = one third normal, etc.
 
-int		ticdup;
+int		ticdup = 3;
 
 // Amount to offset the timer for game sync.
 
@@ -727,7 +727,7 @@ void TryRunTics (void)
     }
     else
     {
-        NetUpdate ();
+        //NetUpdate ();
     }
 
     lowtic = GetLowTic();
@@ -735,7 +735,6 @@ void TryRunTics (void)
     availabletics = lowtic - gametic/ticdup;
 
     // decide how many tics to run
-
     if (new_sync)
     {
 	counts = availabletics;
@@ -758,7 +757,6 @@ void TryRunTics (void)
             OldNetSync();
         }
     }
-
     if (counts < 1)
 	counts = 1;
 
@@ -766,7 +764,7 @@ void TryRunTics (void)
 
     while (!PlayersInGame() || lowtic < gametic/ticdup + counts)
     {
-	NetUpdate ();
+	//NetUpdate ();
 
         lowtic = GetLowTic();
 
@@ -783,6 +781,7 @@ void TryRunTics (void)
 
         I_Sleep(1);
     }
+	
 
     // run the count * ticdup dics
     while (counts--)

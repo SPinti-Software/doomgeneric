@@ -79,9 +79,11 @@ static LRESULT CALLBACK wndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
 		ExitProcess(0);
 		break;
 	case WM_KEYDOWN:
+		printf(" ****** WM_KEYDOWN : 0x%x\n", wParam);
 		addKeyToQueue(1, wParam);
 		break;
 	case WM_KEYUP:
+		printf(" ****** WM_KEYUP : 0x%x\n", wParam);
 		addKeyToQueue(0, wParam);
 		break;
 	default:

@@ -36,6 +36,8 @@
 
 #include "w_wad.h"
 
+void I_EndRead (void);
+
 typedef struct
 {
     // Should be "IWAD" or "PWAD".

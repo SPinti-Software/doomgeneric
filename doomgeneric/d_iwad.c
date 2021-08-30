@@ -34,11 +34,11 @@
 
 static const iwad_t iwads[] =
 {
-    { "doom2.wad",    doom2,     commercial, "Doom II" },
+    { "DOOM1.WAD",    doom,      shareware,  "Doom Shareware" },
+	{ "doom2.wad",    doom2,     commercial, "Doom II" },
     { "plutonia.wad", pack_plut, commercial, "Final Doom: Plutonia Experiment" },
     { "tnt.wad",      pack_tnt,  commercial, "Final Doom: TNT: Evilution" },
     { "doom.wad",     doom,      retail,     "Doom" },
-    { "DOOM1.WAD",    doom,      shareware,  "Doom Shareware" },
     { "chex.wad",     pack_chex, shareware,  "Chex Quest" },
     { "hacx.wad",     pack_hacx, commercial, "Hacx" },
     { "freedm.wad",   doom2,     commercial, "FreeDM" },
@@ -429,14 +429,16 @@ static char *CheckDirectoryHasIWAD(char *dir, char *iwadname)
         filename = M_StringJoin(dir, DIR_SEPARATOR_S, iwadname, NULL);
     }
 
-    printf("Trying IWAD file:%s\n", filename);
+    fprintf(stdout, "Trying IWAD file:'%s'\n", filename);
+	
 
     if (M_FileExists(filename))
     {
         return filename;
     }
 
-    free(filename);
+	fprintf(stdout, "Freeeeeeeeeee\n");
+    //free(filename);
 
     return NULL;
 }

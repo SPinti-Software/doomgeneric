@@ -123,7 +123,7 @@ void P_InitSwitchList(void)
 		
 	if (alphSwitchList[i].episode <= episode)
 	{
-#if 0	// UNUSED - debug?
+#if 1	// UNUSED - debug?
 	    int		value;
 			
 	    if (R_CheckTextureNumForName(alphSwitchList[i].name1) < 0)
