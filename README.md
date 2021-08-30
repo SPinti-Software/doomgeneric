@@ -5,6 +5,8 @@ This generate an Win32 .exe executable file for **game on Windows** and **Cpcdos
 
 _Use adapted **doom.cpc** file for execute win32 game into cpcdos_
 
+YouTube : [Win32 Doom on Cpcdos OS2.1](https://www.youtube.com/watch?v=f4MRNSdPDIU)
+
 Example on ElieOS on Cpcdos OS2.1 kernel
 ![CPCDOS](screenshots/cpcdos.png)
 
